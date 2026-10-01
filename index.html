@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEVFIX - Instant Developer Error Diagnosis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>DEVFIX</h1>
+      <p class="subtitle">Fast, deterministic error analysis & fixes without hallucination</p>
+    </header>
+
+    <main>
+      <div class="input-card">
+        <label for="languageSelect">Target Language / Environment:</label>
+        <select id="languageSelect">
+          <option value="javascript">JavaScript / Node.js</option>
+          <option value="python">Python</option>
+          <option value="cpp">C / C++</option>
+        </select>
+
+        <label for="errorInput">Paste Your Terminal Error / Traceback:</label>
+        <textarea id="errorInput" rows="5" placeholder="e.g., TypeError: Cannot read properties of undefined (reading 'name')"></textarea>
+
+        <button id="fixBtn" class="btn-primary">Diagnose Error</button>
+      </div>
+
+      <div id="outputCard" class="output-card hidden">
+        <h2>Diagnosis Report</h2>
+        <div class="diagnosis-block">
+          <h3>What Happened:</h3>
+          <p id="outWhat">-</p>
+        </div>
+
+        <div class="diagnosis-block">
+          <h3>Why It Happened:</h3>
+          <p id="outWhy">-</p>
+        </div>
+
+        <div class="diagnosis-block">
+          <h3>How to Fix:</h3>
+          <p id="outHow">-</p>
+        </div>
+
+        <div class="diagnosis-block">
+          <h3>Code Example / Fix:</h3>
+          <pre><code id="outCode">// Suggested fix will appear here</code></pre>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>DEVFIX MVP &bull; Hackathon Edition</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
